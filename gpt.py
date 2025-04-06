@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv("project.env")
 # Set up the Gemini API key
-genai.configure(api_key="AIzaSyA_xoVq9OqFRrwX7lhHLMOM2lodCQm08Os")
+genai.configure(api_key=os.getenv('API_KEY'))
 
 def get_summarise(system, text):
     model = genai.GenerativeModel("gemini-2.0-flash")
